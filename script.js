@@ -1,8 +1,7 @@
 var page_count = 0;
 window.addEventListener("load", function (event) {
-    console.log(window);
     if (!window.name || window.name.length == 0) {
-        console.warn(
+        alert(
             "You must provide a valid TIFF image path in the name attribute of the iframe."
         );
     }
@@ -86,7 +85,6 @@ function incrementScale() {
     let pages = document.querySelectorAll("canvas.canvas-page");
     pages.forEach(function (canvas) {
         let new_width = parseInt(canvas.width) / (1 / parseFloat(scale)) + "px";
-        console.log("new width: ", new_width);
         canvas.style.width = new_width;
         canvas.style.height = "auto";
     });
@@ -98,7 +96,6 @@ function decrementScale() {
     let pages = document.querySelectorAll("canvas.canvas-page");
     pages.forEach(function (canvas) {
         let new_width = parseInt(canvas.width) / (1 / parseFloat(scale)) + "px";
-        console.log("new width: ", new_width);
         canvas.style.width = new_width;
         canvas.style.height = "auto";
     });
@@ -135,12 +132,9 @@ function setScale() {
         case "page_scale_percent":
             document;
             pages.forEach(function (canvas) {
-                console.log("canvas.width", canvas.width);
-                console.log("selected.value", selected.value);
                 let new_width =
                     parseInt(canvas.width) / (1 / parseFloat(selected.value)) +
                     "px";
-                console.log("new width: ", new_width);
                 canvas.style.width = new_width;
                 canvas.style.height = "auto";
             });
