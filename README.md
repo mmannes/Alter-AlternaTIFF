@@ -8,6 +8,8 @@ It uses the [Tiff.js](https://github.com/seikichi/tiff.js) webassembly port of t
 
 The aim of this repository is to clone the behaviour of the Firefox's PDF viewer. Today it has the minimum functionalities that I need, like pagination, zoom and a download button.
 
+The name is a tribute to the former [AlternaTIFF](https://www.alternatiff.com/) image viewer for Internet Explorer, which served me well during the IE era.
+
 ## Example
 
 Simply clone this repository inside your project and display TIFF like in the example bellow:
