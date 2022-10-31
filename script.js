@@ -13,7 +13,18 @@ window.addEventListener("load", function (event) {
     xhr.onload = function (e) {
         var buffer = xhr.response;
         var tiff = new Tiff({ buffer: buffer });
+        let limit_in_miliseconds = 10000;
+        let start = new Date().getTime();
         for (var i = 0, len = tiff.countDirectory(); i < len; ++i) {
+            let end = new Date().getTime();
+            if (end - start > limit_in_miliseconds) {
+                alert(
+                    "This document is too big and it will be presented until page " +
+                        i +
+                        ". You can click download to be able to view it entirely in your favorite TIFF viewer application."
+                );
+                break;
+            }
             tiff.setDirectory(i);
             var canvas = tiff.toCanvas();
             page_count++;
